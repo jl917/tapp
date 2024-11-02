@@ -1,0 +1,41 @@
+{
+  "branches": [
+    "master"
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "./scripts/prepareCMD.sh ${nextRelease.version}",
+        "publishCmd": "echo Publishing ${nextRelease.version}"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "addReleases": "bottom",
+        "assets": [
+          {
+            "path": "./dist/**/*.{msi,deb,rpm,AppImage,dmg,zip}"
+          }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "package.json",
+          "src-tauri/tauri.conf.json",
+          "src-tauri/Cargo.toml",
+          "LICENSE*",
+          "CHANGELOG.md"
+        ],
+        "message": "chore(${nextRelease.type}): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
+  ]
+}
