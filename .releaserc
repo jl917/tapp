@@ -17,8 +17,8 @@
       "@semantic-release/github",
       {
         "assets": [
-          "tapp_*_amd64.deb",
-          "tapp-*.x86_64.rpm"
+          "tapp_*_x64_en-US.msi",
+          "tapp_*_x64-setup.exe"
         ]
       }
     ],
