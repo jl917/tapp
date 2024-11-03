@@ -13,12 +13,12 @@ jobs:
     strategy:
       matrix:
         include:
-          # - platform: 'macos-latest' # for Arm based macs (M1 and above).
-          #   args: '-- --target aarch64-apple-darwin'
+          - platform: 'macos-latest' # for Arm based macs (M1 and above).
+            # args: '-- --target aarch64-apple-darwin'
           # - platform: 'macos-latest' # for Intel based macs.
           #   args: '-- --target x86_64-apple-darwin'
-          # - platform: 'macos-latest' # for Universal mac.
-          #   args: '-- --target universal-apple-darwin'
+          - platform: 'macos-latest' # for Universal mac.
+            args: '-- --target universal-apple-darwin'
           # - platform: 'ubuntu-22.04' # for Tauri v1 you could replace this with ubuntu-20.04.
           #   args: ''
           - platform: 'windows-latest'
@@ -70,19 +70,19 @@ jobs:
       - name: Move macOS artifacts to outputs
         if: matrix.platform == 'macos-latest'
         run: |
-          cp -r src-tauri/target/universal-apple-darwin/release/bundle/dmg/Notpad_*_universal.dmg outputs/
+          cp -r src-tauri/target/universal-apple-darwin/release/bundle/dmg/tapp_*_universal.dmg outputs/
 
       - name: Move Ubuntu artifacts to outputs
         if: matrix.platform == 'ubuntu-22.04'
         run: |
-          cp src-tauri/target/release/bundle/deb/Notpad_*_amd64.deb outputs/
-          cp src-tauri/target/release/bundle/rpm/Notpad-*.x86_64.rpm outputs/
+          cp src-tauri/target/release/bundle/deb/tapp_*_amd64.deb outputs/
+          cp src-tauri/target/release/bundle/rpm/tapp-*.x86_64.rpm outputs/
 
       - name: Move Windows artifacts to outputs
         if: matrix.platform == 'windows-latest'
         run: |
-          cp src-tauri/target/release/bundle/msi/Notpad_*_x64_en-US.msi outputs/
-          cp src-tauri/target/release/bundle/nsis/Notpad_*_x64-setup.exe outputs/
+          cp src-tauri/target/release/bundle/msi/tapp_*_x64_en-US.msi outputs/
+          cp src-tauri/target/release/bundle/nsis/tapp_*_x64-setup.exe outputs/
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
@@ -90,12 +90,12 @@ jobs:
           name: tauri-artifacts-${{ strategy.job-index }}
           path: outputs/
           # path: |
-          #   src-tauri/target/universal-apple-darwin/release/bundle/macos/Notpad.app
-          #   src-tauri/target/universal-apple-darwin/release/bundle/dmg/Notpad_*_universal.dmg
-          #   src-tauri/target/release/bundle/deb/notpad_*_amd64.deb
-          #   src-tauri/target/release/bundle/rpm/notpad-*.x86_64.rpm
-          #   src-tauri/target/release/bundle/msi/Notpad_*_x64_en-US.msi
-          #   src-tauri/target/release/bundle/nsis/Notpad_*_x64-setup.exe
+          #   src-tauri/target/universal-apple-darwin/release/bundle/macos/tapp.app
+          #   src-tauri/target/universal-apple-darwin/release/bundle/dmg/tapp_*_universal.dmg
+          #   src-tauri/target/release/bundle/deb/tapp_*_amd64.deb
+          #   src-tauri/target/release/bundle/rpm/tapp-*.x86_64.rpm
+          #   src-tauri/target/release/bundle/msi/tapp_*_x64_en-US.msi
+          #   src-tauri/target/release/bundle/nsis/tapp_*_x64-setup.exe
           retention-days: 1
 
   semantic-release:
