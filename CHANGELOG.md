@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/jl917/tapp/compare/v1.0.5...v1.0.6) (2024-11-04)
+
+
+### Bug Fixes
+
+* 제발 마자믹이길 ([0da744f](https://github.com/jl917/tapp/commit/0da744fe22aa3a951eb02c0750a5e6c35be275a2))
+
 ## [1.0.5](https://github.com/jl917/tapp/compare/v1.0.4...v1.0.5) (2024-11-04)
 
 
