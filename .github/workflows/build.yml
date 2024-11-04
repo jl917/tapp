@@ -14,7 +14,7 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action
+      - uses: google-github-actions/release-please-action@e4dc86ba9405554aeba3c6bb2d169500e7d3b4ee # v4
         id: release
         with:
           token: ${{ secrets.GH_TOKEN }}
@@ -36,10 +36,10 @@ jobs:
 
     runs-on: ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout # v4
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       - name: Install bun
-        uses: oven-sh/setup-bun # v2
-      - name: Create Fake .env File (dotenvy_macro requirement)
+        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
+      # - name: Create Fake .env File (dotenvy_macro requirement)
         # run: |
         #   touch src-tauri/.env
         #   echo APTABASE_KEY=${{ secrets.APTABASE_KEY }} >> src-tauri/.env
@@ -61,15 +61,15 @@ jobs:
               libsoup-3.0 \
               webkit2gtk-4.1
       - name: Install Rust
-        uses: dtolnay/rust-toolchain
+        uses: dtolnay/rust-toolchain@7b1c307e0dcbda6122208f10795a713336a9b35a # master
         with:
           toolchain: stable
       - name: Run sccache-cache
-        uses: mozilla-actions/sccache-action@
+        uses: mozilla-actions/sccache-action@89e9040de88b577a072e3760aaf59f585da083af # v0.0.5
       - name: Install Dependencies and Build
         run: |
-          npm install
-          npm run build
+          bun install
+          bun run build
       - name: Build the Tauri App
         uses: tauri-apps/tauri-action
         env:
