@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/jl917/tapp/compare/v1.0.4...v1.0.5) (2024-11-04)
+
+
+### Bug Fixes
+
+* 1 ([0c1d14d](https://github.com/jl917/tapp/commit/0c1d14d4e79cb773c2e8cf8ca19d0af5b26e6ad5))
+
 # Changelog
 
 ## [1.0.4](https://github.com/jl917/tapp/compare/v1.0.3...v1.0.4) (2024-11-04)
