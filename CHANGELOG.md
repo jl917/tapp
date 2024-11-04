@@ -1,4 +1,37 @@
-# 1.0.0 (2024-11-03)
+# Changelog
+
+## [1.0.3](https://github.com/jl917/tapp/compare/v1.0.2...v1.0.3) (2024-11-04)
+
+
+### Bug Fixes
+
+* 오류 수정 ([e7a5787](https://github.com/jl917/tapp/commit/e7a5787761c3ef5917dab5400947f2e369422acd))
+
+## [1.0.2](https://github.com/jl917/tapp/compare/v1.0.1...v1.0.2) (2024-11-04)
+
+
+### Bug Fixes
+
+* 버전 sync ([5fb2999](https://github.com/jl917/tapp/commit/5fb29999302c31006b68908fbc6a1d77445eae1e))
+* 빌드3 ([85d6ab9](https://github.com/jl917/tapp/commit/85d6ab961b902ccbe590f4ad5b84ca9c00d2eed0))
+* 빌드스크립트2 ([b9994ce](https://github.com/jl917/tapp/commit/b9994cee5271787211a5fa192fe188a3784f6992))
+* 스크립트 변경 ([9df1bb8](https://github.com/jl917/tapp/commit/9df1bb809bb1e20cca52d5e29b36b7e61d7a925f))
+
+## [1.0.1](https://github.com/jl917/tapp/compare/v1.0.0...v1.0.1) (2024-11-04)
+
+
+### Bug Fixes
+
+* mac환경 추가 ([8fe72f7](https://github.com/jl917/tapp/commit/8fe72f758ec133e343e5427e7da1578876bd69fe))
+* 버전 2.0.0 으로 교체 ([1de84e4](https://github.com/jl917/tapp/commit/1de84e4148490303dfb1418040e58787f5ae0140))
+* 버전 sync ([5fb2999](https://github.com/jl917/tapp/commit/5fb29999302c31006b68908fbc6a1d77445eae1e))
+* 빌드 스크립트3 ([8c7adaa](https://github.com/jl917/tapp/commit/8c7adaa07bb21eddc5ba97e2e3fe1b0d4ee4863e))
+* 빌드3 ([85d6ab9](https://github.com/jl917/tapp/commit/85d6ab961b902ccbe590f4ad5b84ca9c00d2eed0))
+* 빌드스크립트2 ([b9994ce](https://github.com/jl917/tapp/commit/b9994cee5271787211a5fa192fe188a3784f6992))
+* 빌드환경 linux =&gt; widows ([e44f8c4](https://github.com/jl917/tapp/commit/e44f8c4cf98560f1af8e913761df3981a9baafac))
+* 스크립트 변경 ([9df1bb8](https://github.com/jl917/tapp/commit/9df1bb809bb1e20cca52d5e29b36b7e61d7a925f))
+
+## 1.0.0 (2024-11-03)
 
 
 ### Bug Fixes
