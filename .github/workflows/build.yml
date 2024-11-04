@@ -4,11 +4,16 @@ on:
       - master
 permissions: read-all
 
-name: Release
+env:
+  CARGO_TERM_COLOR: always
+  SCCACHE_GHA_ENABLED: true
+  RUSTC_WRAPPER: sccache
+
+name: Release Please
 
 jobs:
-  release:
-    name: Release
+  release-please:
+    name: Release Please
     permissions:
       contents: write
       pull-requests: write
@@ -17,9 +22,17 @@ jobs:
       - uses: google-github-actions/release-please-action@e4dc86ba9405554aeba3c6bb2d169500e7d3b4ee # v4
         id: release
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          # this assumes that you have created a personal access token
+          # (PAT) and configured it as a GitHub action secret named
+          # `MY_RELEASE_PLEASE_TOKEN` (this secret name is not important).
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # this is a built-in strategy in release-please, see "Action Inputs"
+          # for more options
           release-type: node
+          # a configuration file that tells release-please how to bump
+          # versions and create releases
           config-file: .github/release-please-config.json
+          # manifest file for initial version
           manifest-file: .github/release-please-manifest.json
     outputs:
       releases_created: ${{ steps.release.outputs.releases_created }}
@@ -32,17 +45,17 @@ jobs:
       fail-fast: false
       matrix:
         platform: [ubuntu-22.04]
-        # platform: [macos-latest, ubuntu-22.04, windows-latest]
 
+        # platform: [macos-latest, ubuntu-22.04, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       - name: Install bun
         uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
       # - name: Create Fake .env File (dotenvy_macro requirement)
-        # run: |
-        #   touch src-tauri/.env
-        #   echo APTABASE_KEY=${{ secrets.APTABASE_KEY }} >> src-tauri/.env
+      #   run: |
+      #     touch src-tauri/.env
+      #     echo APTABASE_KEY=${{ secrets.APTABASE_KEY }} >> src-tauri/.env
       - name: Install Dependencies (Ubuntu only)
         if: matrix.platform == 'ubuntu-22.04'
         # You can remove libayatana-appindicator3-dev if you don't use the system tray feature.
@@ -71,7 +84,7 @@ jobs:
           bun install
           bun run build
       - name: Build the Tauri App
-        uses: tauri-apps/tauri-action
+        uses: tauri-apps/tauri-action@a130ac329546b42aff78d7ef0596fb9b764c1355 # dev
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
