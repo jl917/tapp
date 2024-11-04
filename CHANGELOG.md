@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/jl917/tapp/compare/v1.0.3...v1.0.4) (2024-11-04)
+
+
+### Bug Fixes
+
+* 버전업 ([f52ae1d](https://github.com/jl917/tapp/commit/f52ae1daff983e8cecde487e7c1d1a845141cc64))
+
 ## [1.0.3](https://github.com/jl917/tapp/compare/v1.0.2...v1.0.3) (2024-11-04)
 
 
