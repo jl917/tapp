@@ -1,3 +1,11 @@
+## [1.0.4-next.2](https://github.com/jl917/tapp/compare/v1.0.4-next.1...v1.0.4-next.2) (2024-11-05)
+
+
+### Bug Fixes
+
+* mac 유니버설 앱 지원 ([0022b04](https://github.com/jl917/tapp/commit/0022b04b366925a6383c69871a0f4afd6baa607f))
+* mac버전 지원 ([51f24ad](https://github.com/jl917/tapp/commit/51f24adc7c5a18e9f3d75a054d2453cdc792ce93))
+
 ## [1.0.4-next.1](https://github.com/jl917/tapp/compare/v1.0.3...v1.0.4-next.1) (2024-11-05)
 
 
