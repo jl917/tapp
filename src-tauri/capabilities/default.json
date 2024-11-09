@@ -3,5 +3,9 @@
   "identifier": "default",
   "description": "Capability for the main window",
   "windows": ["main"],
+  "remote": {
+    "urls": ["https://jl917tapp.netlify.app/"]
+  },
+  "webviews": ["https://jl917tapp.netlify.app/"],
   "permissions": ["core:default", "shell:allow-open", "dialog:allow-ask", "dialog:default"]
 }
