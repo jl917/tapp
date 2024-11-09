@@ -8,7 +8,8 @@
       {
         "title": "tapp",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "url": "https://jl917tapp.netlify.app/"
       }
     ],
     "security": {
