@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
+    "build:dev": "vite build",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri build",
+    "tauri:dev": "npm run tauri build -- --config src-tauri/tauri.dev.conf.json"
   },
   "dependencies": {
     "@tauri-apps/api": "2.0.0",

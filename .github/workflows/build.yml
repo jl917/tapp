@@ -1,10 +1,10 @@
 name: Semantic Release
 on:
-  # workflow_dispatch:
-  push:
-    branches:
-      - master
-      - next
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - master
+  #     - next
 
 jobs:
   build-and-upload:
