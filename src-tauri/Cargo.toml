@@ -16,6 +16,7 @@ features = []
 [dependencies]
 tauri-plugin-shell = "2"
 serde_json = "1"
+tauri-plugin-dialog = "2"
 [dependencies.tauri]
 version = "2"
 features = []

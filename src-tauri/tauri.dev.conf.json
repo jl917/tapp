@@ -1,8 +1,14 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "tapp",
-  "version": "1.0.4-next.2",
+  "version": "1.0.4",
   "identifier": "io.github.jl917",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build:local",
+    "frontendDist": "../dist"
+  },
   "app": {
     "windows": [
       {
